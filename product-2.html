@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="bg-claro"></div>
+    <header class="header">
+
+        <dlv class="menu container">
+            <a href="#" class="logo"> DigitalZ <img src="images/logo.png"></a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="images/menu.png" class="menu-icono" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="DGZone.html"> Inicio </a></li>
+                    <li><a href="a"> GPU´s </a></li>
+                    <li><a href="a"> Procesadores </a></li>
+                    <li><a href="a"> Fuentes de Poder </a></li>
+                    <li><a href="a"> Placas Madre </a></li>
+                    <li><a href="a"> Consejos </a></li>
+                </ul>
+            </nav>
+        </dlv>
+
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1> Mejora Tu <span>PC</span> <br> Cambia el Juego </h1>
+                <p>
+                    Tenemos lo mejor en componentes de alto rendimiento para computadoras de cualquier ambito.
+                </p>
+                <div class="butons">
+                    <a href="#" class="btn-1">Informacion</a>
+                    <a href="#" class="btn-1">Ofertas</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<main class="product-page container">
+    <h1>Tarjeta de Video XFX Speedster SWFT210 Radeon RX 6650XT</h1>
+    <img src="images/l2.jpg" alt="Tarjeta Gráfica ASUS" style="width: 400px;">
+    
+    <section class="product-details">
+        <h2>Descripción del Producto</h2>
+        <p>8GB GDDR6, 1xHDMI, 3xDisplayPort, PCI Express 4.0.</p>
+        
+        <h2>Características:</h2>
+        <ul>
+            <li>CUDA Cores	2048</li>
+            <li>Boost Clock (MHz)	2635 MHz</li>
+            <li>Tipo de Memoria	GDDR6</li>
+            <li>DisplayPort	3xDisplayPort</li>
+            <li>HDMI	1xHDMI</li>
+        </ul>
+        
+        <div id="paypal-button-container"></div>
+
+        <div class="price"></div>
+            <p>$20,999.00</p>
+            <a href="https://www.paypal.com/signin?locale.x=es_MX" class="btn-2">Comprar</a>
+        </div>
+
+        <script>
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: '11699.00' // El precio del producto
+                            },
+                            description: 'Tarjeta Gráfica ASUS TUF Gaming RTX 3090' // Descripción del producto
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        alert('Pago completado por ' + details.payer.name.given_name);
+                        // Aquí puedes redirigir al usuario a una página de confirmación
+                    });
+                },
+                onCancel: function(data) {
+                    alert('Pago cancelado');
+                },
+                onError: function(err) {
+                    console.error('Ocurrió un error: ', err);
+                }
+            }).render('#paypal-button-container'); // Renderiza el botón de PayPal en el contenedor
+        </script>
+
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="link">
+        <a href="#" class="logo">DigitalZ</a>
+    </div>
+
+    <div class="link">
+        <ul>
+            <li><a href="https://www.instagram.com/enrique_ef30/"target="blank">
+                <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li>2024 DigitalZ. Todos los derechos reservados.</li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>
